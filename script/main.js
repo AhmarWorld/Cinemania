@@ -18,6 +18,12 @@ document.querySelectorAll(`#toRegistrationPage`).forEach((i)=>{
     })
 })
 
+document.querySelectorAll(`#toAboutPage`).forEach((i)=>{
+    i.addEventListener(`click`, ()=>{
+        location.replace(`./about.html`)
+    })
+})
+
 async function makeQuery(endpoint, method = `GET`, payload = ``) {
     let options = {
         method,
