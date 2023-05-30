@@ -14,6 +14,7 @@ async function loadInfo(endpoitn) {
 
     let response = await fetch(LINK + endpoitn, options);
     let { docs } = await response.json();
+    console.log(docs);
     return docs;
 }
 loadInfo(`movie?page=1&limit=6`).then((data) => {
