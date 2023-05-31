@@ -20,7 +20,7 @@ async function loadInfo(endpoitn) {
 loadInfo(`movie?page=1&limit=6`).then((data) => {
     for (let movie of data) {
         rowListTop.innerHTML += `
-        <div class="movie-card" onclick="openMoviePage(${movie.id})">
+        <div class="movie-card" style="margin:0 auto; margin-bottom:80px;" onclick="openMoviePage(${movie.id})">
         <img
             src="${movie.poster.url}"
             class="card-img"
@@ -46,7 +46,7 @@ loadInfo(`movie?page=1&limit=6`).then((data) => {
 loadInfo(`movie?page=2&limit=6`).then((data) => {
     for (let movie of data) {
         lifeList.innerHTML += `
-        <div class="movie-card" onclick="openMoviePage(${movie.id})">
+        <div class="movie-card" style="margin:0 auto; margin-bottom:80px;" onclick="openMoviePage(${movie.id})">
         <img
             src="${movie.poster.url}"
             class="card-img"
@@ -72,7 +72,7 @@ loadInfo(`movie?page=2&limit=6`).then((data) => {
 loadInfo(`movie?page=3&limit=6`).then((data) => {
     for (let movie of data) {
         brillitantAnim.innerHTML += `
-        <div class="movie-card" onclick="openMoviePage(${movie.id})">
+        <div class="movie-card" style="margin:0 auto; margin-bottom:80px;" onclick="openMoviePage(${movie.id})">
         <img
             src="${movie.poster.url}"
             class="card-img"
