@@ -4,8 +4,14 @@ let regPassInp = document.querySelector(`#exampleInputPassword1`)
 let sendCode = document.querySelector("#sendCode");
 let code_input = document.querySelector("#code");
 let regBtn = document.querySelector(`#regBtn`)
+let select = document.querySelector(`#exampleInputSelect1`)
 let random = Math.floor(Math.random() * 9000) + 1000;
-
+let inpDate = document.querySelector(`#exampleInputCalendar1`)
+let date = new Date().getTime()
+function doTime() {
+    inpDate.setAttribute(`max`, `${new Date().getFullYear(date)}-${new Date().getMonth(date)}-${new Date().getDay(date)}`)
+}
+doTime()
 sendCode.addEventListener("click", async () => {
     const templateParams = {
         from_name: "Ahmar World",
@@ -44,3 +50,17 @@ regBtn.addEventListener("click", () => {
     }
 
 });
+
+async function getCity() {
+    let response = await fetch(`https://namaztimes.kz/ru/api/states?id=99`)
+    let data = await response.json()
+
+    let country = Object.keys(data)
+    for(let city of country){
+        let option = document.createElement(`option`)
+        option.innerHTML = `${city}`
+        select.appendChild(option)
+    }
+    return data
+}
+getCity()
